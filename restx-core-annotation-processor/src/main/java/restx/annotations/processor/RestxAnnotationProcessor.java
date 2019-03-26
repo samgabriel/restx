@@ -235,7 +235,7 @@ public class RestxAnnotationProcessor extends RestxAbstractProcessor {
         for (Map.Entry<? extends ExecutableElement, ? extends AnnotationValue> fieldEntry : methodAnnotation
                 .getElementValues().entrySet()) {
             String fieldName = fieldEntry.getKey().getSimpleName().toString();
-//            .toString().substring(0,
+            //            .toString().substring(0,
 //                    fieldEntry.getKey().toString().length() - "()".length());
             TypeMirror type = fieldEntry.getKey().getReturnType();
             TypeMirror componentType = AnnotationFieldKind.componentTypeOf(type);
