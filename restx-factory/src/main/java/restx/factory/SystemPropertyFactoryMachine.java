@@ -23,7 +23,7 @@ public class SystemPropertyFactoryMachine implements FactoryMachine {
             protected T doNewComponent(SatisfiedBOM satisfiedBOM) {
                 // in case the system property has been nullified, we return an empty string as value, rather than null
                 // which would break the component building
-                return (T) Objects.firstNonNull(System.getProperty(name.getName()), "");
+                return (T) Optional.fromNullable(System.getProperty(name.getName())).or("");
             }
         };
     }
